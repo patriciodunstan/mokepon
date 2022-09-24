@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MOKEPON!</title>
+    <script src="./js/mokepon.js" ></script>
+  </head>
+  <body>
+    <h1>MOKEPON! 🔥💧🌱</h1>
+
+    <section id= "seleccionar-mascota">
+      <h2>Elige tu mascota:</h2>
+
+      <label for="Tortle">Tortle</label>
+      <input type= "radio" name= "mascota" id= "Tortle"/>
+
+      <label for="Hood">Hood</label>
+      <input type= "radio" name= "mascota" id= "Hood"/>
+
+      <label for="Charman">Charman</label>
+      <input type= "radio" name= "mascota" id= "Charman"/>
+
+      <label for="Jaivamon">jaivamon</label>
+      <input type= "radio" name= "mascota" id= "Jaivamon"/>
+
+      <label for="Pepino">Pepino</label>
+      <input type= "radio" name= "mascota" id= "Pepino"/>
+
+      <label for="Pirosand">Pirosand</label>
+      <input type= "radio" name= "mascota" id= "Pirosand"/>
+
+    
+      <button id= "boton-mascota">seleccionar</button>
+    </section> 
+
+    <section id= "seleccionar-ataque">
+      <h2>Elige tu ataque:</h2>
+
+      <p>Tu mascota <span id="mascota-jugador" ></span> tiene <span id=" vida-jugador">3</span> vidas</p>
+      <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id=" vida-enemigo">3</span> vidas</p>
+
+      <p>
+        <button id= "boton-Fuego">Fuego 🔥</button>
+        <button id= "boton-Agua">Agua 💧</button>
+        <button id= "boton-Tierra">Tierra 🌱</button>
+      </p>
+    </section>
+
+    <section id="mensajes ">
+      <P>mensajes dinamicos js(tu mascota ataco con Fuego, m enemigo ataco con Tierra ganaste.</P>
+    </section>
+   
+    <section id="reiniciar ">
+      <button id= "boton-reiniciar">reiniciar</button>
+    </section>
+  </body>
+</html>
