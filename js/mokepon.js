@@ -46,7 +46,7 @@ function seleccionarMascotaJugador(){
         spanMascotaJugador.innerHTML= 'Pirosand'
     }
     else{
-       alert('Selecciona una mascota')
+       alert('selecciona una mascota')
     }
 
     seleccionarMascotaEnemigo()
@@ -96,14 +96,32 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo= 'Tierra'
     }
-    crearMensaje() //se utiliaz para mandar a llamar el ataque enemigo
+    combate() //se utiliaz para mandar a llamar el ataque enemigo
+}
+function combate(){
+    if(ataqueJugador == ataqueEnemigo){
+        crearMensaje('empate')
+    }
+    else if(ataqueJugador ==' Fuego' && ataqueEnemigo == 'Tierra'){
+        crearMensaje('ganaste')
+    }
+    else if(ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
+        crearMensaje('ganaste')
+    }
+    else if(ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
+        crearMensaje('ganaste')
+  }
+    else {
+        crearMensaje('perdiste')
+    }
 }
 
-function crearMensaje(){
+function crearMensaje(definicion){
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = "tu mascota ataco con" + ataqueJugador +  "mascota enemigo ataco con" + ataqueEnemigo
+    parrafo.innerHTML = "tu mascota ataco con" + ataqueJugador +  "mascota enemigo ataco con" + ataqueEnemigo + "--" + definicion
+    
     sectionMensajes.appendChild(parrafo)
 }
 
