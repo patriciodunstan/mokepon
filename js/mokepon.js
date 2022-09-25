@@ -9,11 +9,11 @@ function iniciarJuego(){
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
     //eventos
-    let botonFuego= document.getElementById('boton-fuego')
+    let botonFuego= document.getElementById('boton-Fuego')
     botonFuego.addEventListener('click', ataqueFuego)
-    let botonAgua= document.getElementById('boton-agua')
+    let botonAgua= document.getElementById('boton-Agua')
     botonAgua.addEventListener('click', ataqueAgua)
-    let botonTierra= document.getElementById('boton-tierra')
+    let botonTierra= document.getElementById('boton-Tierra')
     botonTierra.addEventListener('click', ataqueTierra)
 }
 //Funciones para seleccionar mascotas.
@@ -96,12 +96,15 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo= 'Tierra'
     }
-    crearMensaje()
+    crearMensaje() //se utiliaz para mandar a llamar el ataque enemigo
 }
 
 function crearMensaje(){
+    let sectionMensajes = document.getElementById('mensajes')
+
     let parrafo = document.createElement('p')
     parrafo.innerHTML = "tu mascota ataco con" + ataqueJugador +  "mascota enemigo ataco con" + ataqueEnemigo
+    sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min, max) {
