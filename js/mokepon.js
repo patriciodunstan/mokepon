@@ -96,6 +96,12 @@ function ataqueAleatorioEnemigo(){
     }else{
         ataqueEnemigo= 'Tierra'
     }
+    crearMensaje()
+}
+
+function crearMensaje(){
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = "tu mascota ataco con" + ataqueJugador +  "mascota enemigo ataco con" + ataqueEnemigo
 }
 
 function aleatorio(min, max) {
