@@ -28,6 +28,8 @@ function seleccionarMascotaJugador(){
     let inputPirosand= document.getElementById('Pirosand')
     let spanMascotaJugador= document.getElementById('mascota-jugador')
 
+    let botonReiniciar= document.getElementById('boton-reiniciar')
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 
     if(inputTortle.checked){
         spanMascotaJugador.innerHTML= 'Tortle'
@@ -108,22 +110,22 @@ function combate(){
     if(ataqueJugador == ataqueEnemigo){
         crearMensaje('empate')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigos
+        spanVidasEnemigo.innerHTML= vidasEnemigo
     }
     else if(ataqueJugador ==' Fuego' && ataqueEnemigo == 'Tierra'){
         crearMensaje('ganaste')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigos
+        spanVidasEnemigo.innerHTML= vidasEnemigo
     }
     else if(ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
         crearMensaje('ganaste')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigos
+        spanVidasEnemigo.innerHTML= vidasEnemigo
     }
     else if(ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
         crearMensaje('ganaste')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigos
+        spanVidasEnemigo.innerHTML= vidasEnemigo
   }
     else {
         crearMensaje('perdiste')
@@ -136,10 +138,10 @@ function combate(){
 
 function revisarVidas(){
     if(vidasJugador == 0){
-        crearMensaje('perdiste')
+        crearMensajeFinal('PERDISTE')
     }
     else if(vidasEnemigo == 0){
-        crearMensaje('ganaste')
+        crearMensaje('GANASTE')
     }
 }
 
@@ -152,15 +154,24 @@ function crearMensaje(definicion){
     sectionMensajes.appendChild(parrafo)
 }
  
-function crearMensajeFinal(definicion){
+function crearMensajeFinal(resultadoFinal){
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = "tu mascota ataco con" + ataqueJugador +  "mascota enemigo ataco con" + ataqueEnemigo + "--" + definicion
+    parrafo.innerHTML = resultadoFinal
     
     sectionMensajes.appendChild(parrafo)
+    
+let botonFuego = document.getElementById('boton-Fuego')
+botonFuego.disabled = true
+let botonAgua = document.getElementById('boton-Agua')
+botonAgua.disable = true
+let botonTierra = document.getElementById('boton-Tierra')
+botonTierra.disable = true
 }
-
+    function reiniciarJuego(){
+        location.reload()
+    }
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
     }
