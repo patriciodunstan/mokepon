@@ -7,29 +7,43 @@ let vidasEnemigo = 3
 //función para inciar juego 
 function iniciarJuego(){
     //variables
-    let botonMascotaJugador= document.getElementById('boton-mascota')
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none'
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none' 
+
+    //display es una propiedad que ayuda a acultar los alementos
+    let botonMascotaJugador = document.getElementById('boton-mascota')
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
 
     //eventos
-    let botonFuego= document.getElementById('boton-Fuego')
+    let botonFuego = document.getElementById('boton-Fuego')
     botonFuego.addEventListener('click', ataqueFuego)
     let botonAgua= document.getElementById('boton-Agua')
     botonAgua.addEventListener('click', ataqueAgua)
     let botonTierra= document.getElementById('boton-Tierra')
     botonTierra.addEventListener('click', ataqueTierra)
-}
-//Funciones para seleccionar mascotas.
-function seleccionarMascotaJugador(){
-    let inputTortle= document.getElementById('Tortle')
-    let inputHood= document.getElementById('Hood')
-    let inputCharman= document.getElementById('Charman')
-    let inputJaivamon= document.getElementById('Jaivamon')
-    let inputPepino= document.getElementById('Pepino')
-    let inputPirosand= document.getElementById('Pirosand')
-    let spanMascotaJugador= document.getElementById('mascota-jugador')
 
     let botonReiniciar= document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego)
+
+}
+//Funciones para seleccionar mascotas.
+function seleccionarMascotaJugador(){
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block'
+
+    let inputTortle= document.getElementById('Tortle')
+    let inputHood = document.getElementById('Hood')
+    let inputCharman = document.getElementById('Charman')
+    let inputJaivamon = document.getElementById('Jaivamon')
+    let inputPepino = document.getElementById('Pepino')
+    let inputPirosand = document.getElementById('Pirosand')
+    let spanMascotaJugador = document.getElementById('mascota-jugador')
 
     if(inputTortle.checked){
         spanMascotaJugador.innerHTML= 'Tortle'
@@ -57,25 +71,26 @@ function seleccionarMascotaJugador(){
         
 }
 function seleccionarMascotaEnemigo(){
-    let mascotaAleatoria= aleatorio(1,6)
-    let spanMascotaEnemigo= document.getElementById('mascota-enemigo')
-    if(mascotaAleatoria==1){
-        spanMascotaEnemigo.innerHTML= 'Tortle'
+    let mascotaAleatoria = aleatorio(1,6)
+    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+
+    if(mascotaAleatoria == 1) {
+        spanMascotaEnemigo.innerHTML = 'Tortle'
     }
-    else if(mascotaAleatoria==2){
-        spanMascotaEnemigo.innerHTML= 'Hood'
+    else if(mascotaAleatoria == 2) {
+        spanMascotaEnemigo.innerHTML = 'Hood'
     }
-    else if(mascotaAleatoria==3){
-        spanMascotaEnemigo.innerHTML= 'Charman'
+    else if(mascotaAleatoria == 3) {
+        spanMascotaEnemigo.innerHTML = 'Charman'
     }
-    else if(mascotaAleatoria==4){
-        spanMascotaEnemigo.innerHTML= 'Jaivamon'
+    else if(mascotaAleatoria == 4) {
+        spanMascotaEnemigo.innerHTML = 'Jaivamon'
     }
-    else if(mascotaAleatoria==5){
-        spanMascotaEnemigo.innerHTML= 'Pepino'
+    else if(mascotaAleatoria ==5 ) {
+        spanMascotaEnemigo.innerHTML = 'Pepino'
     }
     else 
-        spanMascotaEnemigo.innerHTML= 'Pirosand'
+        spanMascotaEnemigo.innerHTML = 'Pirosand'
     }
 function ataqueFuego(){
     ataqueJugador = 'Fuego'
@@ -93,12 +108,12 @@ function ataqueTierra(){
 function ataqueAleatorioEnemigo(){
     let ataqueAleatorio= aleatorio(1,3)
     
-    if(ataqueAleatorio==1){
-        ataqueEnemigo= 'Fuego'
-    }else if(ataqueAleatorio==2){
-       ataqueEnemigo= 'Agua'
+    if(ataqueAleatorio == 1){
+        ataqueEnemigo = 'Fuego'
+    }else if(ataqueAleatorio == 2) {
+       ataqueEnemigo = 'Agua'
     }else{
-        ataqueEnemigo= 'Tierra'
+        ataqueEnemigo = 'Tierra'
     }
     combate() //se utiliaz para mandar a llamar el ataque enemigo
 }
@@ -110,7 +125,7 @@ function combate(){
     if(ataqueJugador == ataqueEnemigo){
         crearMensaje('empate')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigo
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }
     else if(ataqueJugador ==' Fuego' && ataqueEnemigo == 'Tierra'){
         crearMensaje('ganaste')
@@ -120,7 +135,7 @@ function combate(){
     else if(ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
         crearMensaje('ganaste')
         vidasEnemigo--
-        spanVidasEnemigo.innerHTML= vidasEnemigo
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     }
     else if(ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua'){
         crearMensaje('ganaste')
@@ -136,11 +151,10 @@ function combate(){
 
 }
 
-function revisarVidas(){
-    if(vidasJugador == 0){
+function revisarVidas() {
+    if (vidasJugador == 0) {
         crearMensajeFinal('PERDISTE')
-    }
-    else if(vidasEnemigo == 0){
+    } else if( vidasEnemigo == 0){
         crearMensaje('GANASTE')
     }
 }
@@ -149,12 +163,12 @@ function crearMensaje(definicion){
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement('p')
-    parrafo.innerHTML = "tu mascota ataco con" + ataqueJugador +  "mascota enemigo ataco con" + ataqueEnemigo + "--" + definicion
+    parrafo.innerHTML = 'Tu mascota atacó con' + ataqueJugador + ',la mascota enemigo atacó con' + ataqueEnemigo + '-' + definicion
     
     sectionMensajes.appendChild(parrafo)
 }
  
-function crearMensajeFinal(resultadoFinal){
+function crearMensajeFinal(resultadoFinal) {
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement('p')
@@ -165,9 +179,12 @@ function crearMensajeFinal(resultadoFinal){
 let botonFuego = document.getElementById('boton-Fuego')
 botonFuego.disabled = true
 let botonAgua = document.getElementById('boton-Agua')
-botonAgua.disable = true
+botonAgua.disabled = true
 let botonTierra = document.getElementById('boton-Tierra')
-botonTierra.disable = true
+botonTierra.disabled = true
+
+let sectionReiniciar= document.getElementByiD('reiniciar')
+sectionReiniciar.style.display = 'block'
 }
     function reiniciarJuego(){
         location.reload()
@@ -176,4 +193,4 @@ function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
-window.addEventListener('load',iniciarJuego)
+window.addEventListener('load', iniciarJuego)
