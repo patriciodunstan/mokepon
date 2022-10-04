@@ -52,24 +52,30 @@
     <section id= "seleccionar-ataque">
       <h1 class="titulo">MOKEPON! 🔥💧🌱</h1>
 
-      <h2>Elige tu ataque:</h2>
+      <h2 class="subtitulo">Elige tu ataque:</h2>
 
-      <p>Tu mascota <span id="mascota-jugador" ></span> tiene <span id="vidas-jugador">3</span> vidas</p>
-      <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+      <div>
+        <button id= "boton-Fuego"  class="boton-de-ataque">Fuego 🔥</button>
+        <button id= "boton-Agua" class="boton-de-ataque">Agua 💧</button>
+        <button id= "boton-Tierra" class="boton-de-ataque">Tierra 🌱</button>
 
-      <p>
-        <button id= "boton-Fuego" >Fuego 🔥</button>
-        <button id= "boton-Agua">Agua 💧</button>
-        <button id= "boton-Tierra">Tierra 🌱</button>
-      </p>
-    </section>
-
-    <section id="mensajes">
-       <P></P> 
-    </section>
-   
-    <section id="reiniciar">
-      <button id= "boton-reiniciar">reiniciar</button>
-    </section>
+      </div>
+     
+      <div>
+        <section id="mensajes">
+          <p id="resultado"></p>
+          <section id="reiniciar">
+            <button id= "boton-reiniciar">reiniciar</button>
+          </section>
+       </section> 
+      </div>
+      
+      <div>
+        <div id="ataques-del-jugador"></div>
+       <div id="ataques-del-enemigo"></div>
+        <p>Tu mascota <span id="mascota-jugador" ></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+        <p>La mascota <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+      </div>
+    </section>    
   </body>
 </html>
