@@ -4,9 +4,10 @@
         <meta charset="utf-8" />
         <title>MOKEPON!</title>
         <link rel="stylesheet" href="./styles.css"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
-        <section id="seleccionar-mascota">
+        <section id="seleccionar-mascota">      
             <h1 class="titulo">Mokepono</h1> 
 
             <h2 class="subtitulo">Elige tu mascota:</h2>
@@ -19,12 +20,14 @@
         </section>
 
         <section id="ver-mapa">
-            <h1 class="titulo">recorre el mapa con tu mokepon</h1>
+            <h2 class="subtitulo">recorre el mapa con tu mokepon</h2>
             <canvas id="mapa"></canvas>
             <button onmouseup="detenerMovimiento()" onmousedown="moverUp()">UP</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverDown()">DOWN</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverLeft()">LEFT</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverRight()">RIGHT</button>
+            <div>
+                <button onmouseup="detenerMovimiento()" onmousedown="moverDown()">DOWN</button>
+                <button onmouseup="detenerMovimiento()" onmousedown="moverLeft()">LEFT</button>
+                <button onmouseup="detenerMovimiento()" onmousedown="moverRight()">RIGHT</button>
+            </div>
         </section>
 
         <section id="seleccionar-ataque">
