@@ -1,0 +1,23 @@
+{
+  "name": "mokepon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "\t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patriciodunstan/mokepon.git"
+  },
+  "author": "patriciods",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patriciodunstan/mokepon/issues"
+  },
+  "homepage": "https://github.com/patriciodunstan/mokepon#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
